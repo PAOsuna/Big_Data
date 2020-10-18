@@ -6,38 +6,38 @@
 // println(isEven(3))
 // Practice 3, analyse the following code with your own words
 
-def listEvens(list:List[Int]): String ={
-    for(n <- list){
-        if(n%2==0){
-            println(s"$n is even")
+def listEvens(list:List[Int]): String ={ //define listevens function
+    for(n <- list){//cycle initialization, with a counter to go through it
+        if(n%2==0){//condition if the reminder is equal to 0
+            println(s"$n is even")//print the number is even 
         }else{
-            println(s"$n is odd")
+            println(s"$n is odd")//else print the number is odd
         }
     }
-    return "Done"
+    return "Done"//return the text :"Done"
 }
 
-val l = List(1,2,3,4,5,6,7,8)
-val l2 = List(4,3,22,55,7,8)
-listEvens(l)
-listEvens(l2)
+val l = List(1,2,3,4,5,6,7,8)//define de first list of numbers
+val l2 = List(4,3,22,55,7,8)//define de second list of numbers 
+listEvens(l) //run the function listevens with the first list
+listEvens(l2)//run the function listevens with the second list
 
 //3 7 afortunado
 
-def afortunado(list:List[Int]): Int={
-    var res=0
-    for(n <- list){
-        if(n==7){
-            res = res + 14
+def afortunado(list:List[Int]): Int={//defube afortunado function 
+    var res=0//create a variable equal to 0
+    for(n <- list){//cycle initialization with a variable that is less than the length of the list
+        if(n==7){// condition if n is equal to 7 
+            res = res + 14//variable res is equal to itself plus 14
         }else{
-            res = res + n
+            res = res + n//else variable res is equal to itself plus variable n 
         }
     }
-    return res
+    return res//return value of res
 }
 
-val af= List(1,7,7)
-println(afortunado(af))
+val af= List(1,7,7)//create a variable that contains a list
+println(afortunado(af))//print afortunado function whit values of af variable 
 
 def balance(list:List[Int]): Boolean={
     var primera = 0
