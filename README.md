@@ -9,18 +9,22 @@
 
 ## Practice 1 
 
-[Link of Practice 1](https://github.com/PAOsuna/Big_Data/blob/Unit_1/Practices/Practice1.scala)
+[Link of the Practice 1](https://github.com/PAOsuna/Big_Data/blob/Unit_1/Practices/Practice1.scala)
 
 <div id='pr2' />
 
 ## Practice 2
 
-[Link of Practice 2](https://github.com/PAOsuna/Big_Data/blob/Unit_1/Practices/Practice2.scala)
+[Link of the Practice 2](https://github.com/PAOsuna/Big_Data/blob/Unit_1/Practices/Practice2.scala)
 
 <div id='pr3' />
 
 ## Practice 3
 
+[Link of the Practice 3](https://github.com/PAOsuna/Big_Data/blob/Unit_1/Practices/Practices3.scala)
+
 <div id='pr4' />
 
 ## Practice 4
+
+[Link of the Practice 4](https://github.com/PAOsuna/Big_Data/blob/Unit_1/Practices/Practice4.scala)
