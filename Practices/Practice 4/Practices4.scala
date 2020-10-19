@@ -1,20 +1,37 @@
 //Fibonacci 1
-def fib1(n:Int):Int = if(n<2) 
-    1
-    else fib(n-1)+fib(n-2)
 
-(fib1(5))
-
+//lgoritm recursive version 
+val n=10 //define value of n, this is the fibonacci series
+def fib1(n:Int):Int={// define fib1 function whit one condition
+    if(n<2)// if n less than 2 return n value
+    {
+        return n
+    }
+    else //else return fib n - 1 + fib n - 2
+    {
+        return(fib1(n-1)+fib1(n-2))
+    }
+}
+println(fib1(n))
 //fib in which int returns an int is equal if n is less than 2, returns 1, else n minus 1, plus, the fib of n minus 2
 
 //Fibonacci 2 dont work
 
-def fib2(n:Int):Int = if (n<2) 1 else 
-def p: Double = ((1 + sqrt(5))/2) 
-def j: Int = (p(pow n) - ((1 - p)pow n) / (sqrt (5))) 3
+val n = 8 //define value of fibonacci in val n
+var phi=((1+math.sqrt(5))/2) //in variable phi we assign 1 + square root of 5 and all divide by 2
+var j=((math.pow(phi,n)-math.pow((1-phi),n))/(math.sqrt(5))) // In var j we assign the value of var phi squared - (1 - phi)squared and divided by square root of 5
 
-(fib2(5))
 
+def fib2(n:Double) : Double ={//define de fib2 function 
+if (n<2){//if n is less than 2 return value of n, because fib 0 = 0 and fib 1 = 1
+return n
+}
+else {//else return j value
+
+    return j
+}
+}
+println(fib2(n))//print final result of fib2 function
 
 //Algorithm 3 Iterative version
 
