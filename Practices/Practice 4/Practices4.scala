@@ -25,20 +25,35 @@ math.pow(5)
 
 //Algorithm 3 Iterative version
 
-def fib3(n:Int):Int={
-var n : Int = 7
-var a = 0
-var b = 1
-var c = 0
-var k = 0 
+def fib3(n:Int):Int={// define fib3 function and receives a value n
+var n : Int = 7 // fibonacci number 
+var a = 0 //variable 1 
+var b = 1 //variable 2
+var c = 0 //variable 3 
 
 
-    for(k <- 1 to n) {
+
+    for(k <- 1 to n) {//initialize the cycle k from 1 to n 
         
-        c = b + a
-        a = b
-        b = c 
+        c = b + a // c(0) equal to b(1) plus a(0), result c=1 
+        a = b // a takes value of b
+        b = c  // b takes value of c 
     }
-     return a
+     return a //return a value 
 }
-println(fib3(n))
+println(fib3(n))//print final result of fib3 function 
+
+//Algoritm 4 iterative version 2 variables
+
+def fib4(n:Int):Int={ //define fib4 function 
+var n : Int = 6 //define fibonacci number, in this case 6
+var a = 0 //define variable 1
+var b = 1 //define variable 2 
+
+for (k <- 1 to n){//initialize the cycle for k to n 
+    b = b + a //b is 1, so b is equal to b(1) plus a(0), result 1
+    a = b - a //a is 0 , so a is equal to 1 - 0, result 1 and the cycle starts again with new values, in this case b=1 and a=1 
+}
+return a //return a value 
+}
+println(fib4(n))//print the result of fib4 function
