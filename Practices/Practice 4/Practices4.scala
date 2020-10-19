@@ -51,17 +51,19 @@ return a //return a value
 }
 println(fib4(n))//print the result of fib4 function
 
-def fib5(n:Int):Int={
-    if(n< 2){
+
+def fib5(n:Int):Int={//define fib5 function 
+    var n = 7 //define n value
+    var vector = new Array[Int](n+1) //create array of n+1 positions
+    vector(0) = 0 // We set the position 0 and 1 of the vector to 0 and 1 respectively, since fibonacci of 0 = 0 and 1 = 1
+    vector(1) = 1
+    if(n< 2){ //if value of n is less to 2 return the same value of n
         return n 
     }
-    else{
-        var vector = new Array[Int](6)
-        var vector(0) = 0
-        var vector (0) = 1
+    for( k <- 2 to n){ //for loop to loop through vector values
+        vector(k) = vector(k - 1) + vector(k - 2) //fibonacci operation with vector values 
+        //since the value is 7, the fibonacci value of 6 = 8 and the fibonacci value of 5 = 5 are added and the result is 13
     }
-    for( k <- 2 to n){
-        vector(k) = vector(k - 1) + vector(k - 2)
-    }
-    return vector(n)
+    return vector(n)//return the value of vector in n position
 }
+println(fib5(n))//print the final result of fib5 function
