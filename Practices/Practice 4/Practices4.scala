@@ -15,7 +15,6 @@ def fib1(n:Int):Int={// define fib1 function whit one condition
 println(fib1(n))
 //fib in which int returns an int is equal if n is less than 2, returns 1, else n minus 1, plus, the fib of n minus 2
 
-//Fibonacci 2 dont work
 
 val n = 8 //define value of fibonacci in val n
 var phi=((1+math.sqrt(5))/2) //in variable phi we assign 1 + square root of 5 and all divide by 2
