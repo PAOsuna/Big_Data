@@ -24,7 +24,7 @@ listEvens(l2)//run the function listevens with the second list
 
 //3 7 afortunado
 
-def afortunado(list:List[Int]): Int={//defube afortunado function 
+def afortunado(list:List[Int]): Int={//define afortunado function 
     var res=0//create a variable equal to 0
     for(n <- list){//cycle initialization with a variable that is less than the length of the list
         if(n==7){// condition if n is equal to 7 
@@ -39,11 +39,11 @@ def afortunado(list:List[Int]): Int={//defube afortunado function
 val af= List(1,7,7)//create a variable that contains a list
 println(afortunado(af))//print afortunado function whit values of af variable 
 
-def balance(list:List[Int]): Boolean={
+def balance(list:List[Int]): Boolean={//define balance function and two variables
     var primera = 0
     var segunda = 0
 
-    segunda = list.sum
+    segunda = list.sum //Returns the sum of the non-null values in the list and save in segunda
 
     for(i <- Range(0,list.length)){
         primera = primera + list(i)
@@ -64,14 +64,14 @@ balance(bl)
 balance(bl2)
 balance(bl3)
 
-def palindromo(palabra:String):Boolean ={
-    return (palabra == palabra.reverse)
+def palindromo(palabra:String):Boolean ={//function to know if a word is a palindrome, if it is, it will return a boolean value
+    return (palabra == palabra.reverse)//
 }
 
-val palabra = "OSO"
+val palabra = "OSO" //define words
 val palabra2 = "ANNA"
 val palabra3 = "JUAN"
 
-println(palindromo(palabra))
+println(palindromo(palabra))//print the result of function 
 println(palindromo(palabra2))
 println(palindromo(palabra3))
