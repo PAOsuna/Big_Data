@@ -57,3 +57,18 @@ for (k <- 1 to n){//initialize the cycle for k to n
 return a //return a value 
 }
 println(fib4(n))//print the result of fib4 function
+
+def fib5(n:Int):Int={
+    if(n< 2){
+        return n 
+    }
+    else{
+        var vector = new Array[Int](6)
+        var vector(0) = 0
+        var vector (0) = 1
+    }
+    for( k <- 2 to n){
+        vector(k) = vector(k - 1) + vector(k - 2)
+    }
+    return vector(n)
+}
