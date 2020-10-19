@@ -45,15 +45,15 @@ def balance(list:List[Int]): Boolean={//define balance function and two variable
 
     segunda = list.sum //Returns the sum of the non-null values in the list and save in segunda
 
-    for(i <- Range(0,list.length)){
-        primera = primera + list(i)
-        segunda = segunda - list(i)
+    for(i <- Range(0,list.length)){ //Use an for loop i, with a range 0 to list range
+        primera = primera + list(i)  //
+        segunda = segunda - list(i) //
 
-        if(primera == segunda){
+        if(primera == segunda){ // in the if condition, if first and second are equal, it returns a true 
             return true
         }
     }
-    return false 
+    return false  // if the data is not the same, it returns a false
 }
 
 val bl = List(3,2,1)
