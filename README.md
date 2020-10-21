@@ -6,3 +6,11 @@
 >> * [Practice 3](https://github.com/PAOsuna/Big_Data/tree/Unit_1/Practices/Practice%203)
 >> * [Practice 4](https://github.com/PAOsuna/Big_Data/tree/Unit_1/Practices/Practice%204)
 >> * [Practice 5](https://github.com/PAOsuna/Big_Data/tree/Unit_1/Practices/Practice%205)
+
+> [Research]()
+>> * [SAÑUDO CAMACHO LEONARDO DANIEL]()
+>>> + [Research 1]()
+>>> + [Research 2]()
+>> * [OSUNA ENCISO PABLO ALEJANDRO]()
+>>> + [Research 1]()
+>>> + [Research 2]()
