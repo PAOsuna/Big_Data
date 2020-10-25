@@ -23,3 +23,42 @@ df.dtypes
 df.sort("low").show()
 df.sort("high", "Date").show()
 
+6.-
+//Take funcion, returns the first n numbers rows in the Dataset.
+df.take(20)
+
+7.- 
+//Filter function, Filters rows using the given condition.
+df.filter($"Open" > 500).show()
+
+8.-
+//OrderBy function, returns a new Dataset sorted by the given expressions.
+df.orderBy(asc("Open")).show()
+
+9.-
+//drop function, returns a new Dataset with a column dropped. This version of drop accepts a Column rather than a name. This is a no-op if the Dataset doesn't have a column with an equivalent expression.
+df.na.drop().show()
+
+10.-
+//Returns a DataFrameNaFunctions for working with missing data
+df.na.show()
+
+11.-
+//Returns the first n rows.
+df.head()
+
+12.-
+//Returns the number of rows in the Dataset.
+df.count("Open")
+
+13.- 
+//Returns true if the Dataset is empty.
+df.isEmpty
+
+14.-
+//Returns true if the collect and take methods can be run locally
+df.isLocal
+
+15.-
+//Returns true if this Dataset contains one or more sources that continuously return data as it arrives
+df.isStreaming
