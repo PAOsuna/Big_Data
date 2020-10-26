@@ -2,7 +2,7 @@ import org.apache.spark.sql.SparkSession
  
 val spark = SparkSession.builder().getOrCreate() // Pregunta 1 Comienze una simple sesion de spark
 
-val df = spark.read.option("header", "true").option("inferSchema","true")csv("/home/alejandro/Escritorio/ExamenDatosMasivos/Netflix.csv") //inferimos el esquema
+val df = spark.read.option("header", "true").option("inferSchema","true")csv("/home/leonardo/DatosMasivos/Big_Data/Evaluation") //inferimos el esquema
 
 df.columns // Pregunta 3 mostramos las columnas
 
@@ -20,6 +20,8 @@ df.orderBy($"Close".desc).show(1)
 
 // 9.- Escribe con tus propias palabras en un comentario de tu codigo. ¿Cuál es el
 // significado de la columna Cerrar “Close”?
+
+// La columna close representa el valor en el mercado con el que cerro el dia la plataforma de netflix.
 
 // 10.- ¿Cuál es el máximo y mínimo de la columna “Volume”?
 df.select(max("Volume")).show()
