@@ -1,18 +1,25 @@
 import org.apache.spark.sql.SparkSession
  
-val spark = SparkSession.builder().getOrCreate() // Pregunta 1 Comienze una simple sesion de spark
+ // Pregunta 1 Comienze una simple sesion de spark
+val spark = SparkSession.builder().getOrCreate() 
 
-val df = spark.read.option("header", "true").option("inferSchema","true")csv("/home/leonardo/DatosMasivos/Big_Data/Evaluation") //inferimos el esquema
+//inferimos el esquema
+val df = spark.read.option("header", "true").option("inferSchema","true")csv("/home/leonardo/DatosMasivos/Big_Data/Evaluation") 
 
-df.columns // Pregunta 3 mostramos las columnas
+// Pregunta 3 mostramos las columnas
+df.columns 
 
-df.printSchema()//Pregunta 4 imprimimos el esquema
+//Pregunta 4 imprimimos el esquema
+df.printSchema()
 
-df.show(5)  // Pregunta 5 mostramos las 5 primeras filas
+// Pregunta 5 mostramos las 5 primeras filas
+df.show(5)  
 
-df.describe().show()// Pregunta 6 funcion describe
+// Pregunta 6 funcion describe
+df.describe().show()
 
-val df2 = df.withColumn("HV Ratio", df("High")+df("Volume")) //Pregunta 7 creacion de nuevo dataframe 
+//Pregunta 7 creacion de nuevo dataframe 
+val df2 = df.withColumn("HV Ratio", df("High")+df("Volume")) 
 df2.show()
 
 // 8.- ¿Qué día tuvo el pico mas alto en la columna “Close”?
