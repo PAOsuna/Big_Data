@@ -1,68 +1,68 @@
 # Practice 1
 
-#### 1. Desarrollar un algoritmo en scala que calcule el radio de un círculo
+#### 1. Develop a scala algorithm that calculates the radius of a circle
 
-Declaramos la variable circu qué sería el valor del área del círculo, y realizamos la operación adecuada con el despeje de la fórmula.
-Por último imprimimos el valor del radio.
+We declare the variable circu what would be the value of the area of ​​the circle, and we carry out the appropriate operation with the clearing of the formula.
+Finally we print the value of the radius.
 
 
 ```
 val circu = 15
-val pi = 2*3.1416
+val pi = 2 * 3.1416
 val rad = circu / pi
 
 
-println(rad)
+println (rad)
 ```
 
-#### 2. Desarrollar un algoritmo en scala que me diga si un número es primo
+#### 2. Develop an algorithm in scala that tells me if a number is prime
 
-declaramos el numero que revisaremos y el contador, teniendo en cuenta que un numero es primo si solo puede dividirse entre si mismo y 1 y qué el residuo sea 0 se inicia un bucle que si se cumplen ciertas condiciones y nos dirá si el numero es o no es primo, 
+We declare the number that we will review and the counter, taking into account that a number is prime if it can only be divided between itself and 1 and that the remainder is 0, a loop starts that if certain conditions are met and it will tell us if the number is or is not cousin,
 
 ```
-val numero = 3
+val number = 3
 var cont = 0
-for(i <- Range(1, número + 1)) {
- if( num % i == 0) {
-   cont += 1
+for (i <- Range (1, number + 1)) {
+ if (num% i == 0) {
+   cont + = 1
  }
 }
-if(cont != 2) {
- println("Numero no primo")
+if (cont! = 2) {
+ println ("Non-prime number")
 } else {
- println("El numero es primo ")
+ println ("The number is prime")
 }
 ```
 
-#### 3. Dada la variable bird = "tweet", utiliza interpolación de string para imprimir "Estoy escribiendo un tweet"
+#### 3. Given the variable bird = "tweet", use string interpolation to print "I'm writing a tweet"
 
-asignamos el valor tweet a la variable bird y la interpolamos con el texto estoy escribiendo un en la variable interpolar
+we assign the tweet value to the bird variable and we interpolate it with the text I am writing a in the interpolate variable
 
 ```
 val bird = "tweet"
-val interpolar = "Estoy escribiendo un "+ bird
+val interpolate = "I'm writing a" + bird
 ```
 
-#### 4. Dada la variable mensaje = "Hola Luke yo soy tu padre!" utiliza slilce para extraer la secuencia "Luke"
+#### 4. Given the variable message = "Hello Luke, I am your father!" use slilce to extract the sequence "Luke"
 
-asignamos el valor a la variable mensaje, utilizamos la función slice para traer los datos del rango 5 a 9
-
-```
-val mensaje = "Hola Luke yo soy tu padre!"
-mensaje slice (5,9)
-```
-
-#### 5. Cual es la diferencia entre value y una variable en scala?
-
-
-el objeto asignado a un valor no puede ser reemplazado, y el objeto asignado a una var puede, sin embargo, dicho objeto puede tener su estado interno modificado.
-
-
-#### 6. Dada la tupla (2,4,5,1,2,3,3.1416,23) regresa el numero 3.1416 
-
-creamos la tupla, y mandamos llamar la posición 7, en este caso 3.1416
+we assign the value to the message variable, we use the slice function to bring the data from the range 5 to 9
 
 ```
-val x = List(2,4,5,1,2,3,3.1416,23)
-x(7)
+val message = "Hi Luke, I'm your father!"
+message slice (5,9)
+```
+
+#### 5. What is the difference between value and a variable in scala?
+
+
+the object assigned to a value cannot be overridden, and the object assigned to a var can, however, said object can have its internal state modified.
+
+
+#### 6. Given the tuple (2,4,5,1,2,3,3.1416,23) returns the number 3.1416
+
+we create the tuple, and call position 7, in this case 3.1416
+
+```
+val x = List (2,4,5,1,2,3,3.1416,23)
+x (7)
 ```
