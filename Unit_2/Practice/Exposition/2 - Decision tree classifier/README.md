@@ -1,6 +1,6 @@
 # Desicion Tree
 
-Se importan las librerian en orden
+Libraries are imported in order
 
 ```R
 import org.apache.spark.ml.Pipeline
@@ -12,27 +12,27 @@ import org.apache.spark.ml.feature.{IndexToString, StringIndexer, VectorIndexer}
 import org.apache.spark.sql.SparkSession
 
 ```
-Se carga el dataframe en formato LIBSVM
+The dataframe is loaded in LIBSVM format
 
-se agregan etiquetas de índice y metadatos a la columna de etiquetas.
+index tags and metadata are added to the tag column.
 
-El conjunto de datos deben encajar para incluir todas las etiquetas en el índice.
+The dataset must fit to include all the labels in the index.
 
-Se identifican automáticamente características categóricas y luego se indexan.
+Categorical characteristics are automatically identified and then indexed.
 
-Se dividen los datos en conjuntos de prueba y entrenamiento (el 30% se reserva para probar).
+The data is divided into test and training sets (30% reserved for testing).
 
-Se convierten las etiquetas indexadas de nuevo en etiquetas originales.
+Indexed tags are converted back to original tags.
 
-Se indexan las cadena y árbol en el pipeline.
+The chain and tree in the pipeline are indexed.
 
-Se hacen las predicciones las predicciones.
+Predictions are made predictions.
 
-Se elegen las filas de ejemplo para mostrar. 
+Sample rows are chosen to display.
 
-Se Calcula el error de prueba.
+The test error is calculated.
 
-Se Mostran por etapas la clasificación del modelo de árbol
+The classification of the tree model is shown in stages
 
 ```R
 object DecisionTree {

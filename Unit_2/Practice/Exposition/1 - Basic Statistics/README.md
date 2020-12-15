@@ -1,6 +1,6 @@
 # Chi Square
 
-Primero se cargan las librerias para hacer el test 
+Libraries are loaded first to do the test
 
 ```R
 import org.apache.spark.ml.linalg.{Vector, Vectors}
@@ -8,11 +8,11 @@ import org.apache.spark.ml.stat.ChiSquareTest
 import org.apache.spark.sql.SparkSession
 ```
 
-Se inicia la sesion de spark
+Spark session starts
 
-Se crea un nuevo dataframe al cual se le asignara el valor data en las columnas label y features
+A new dataframe is created to which the data value will be assigned in the label and features columns
 
-se crea un valor chi al que se le aplica ChiSquare mediamente las librerias, al data frame en sus columnas features y label
+A chi value is created to which ChiSquare is applied through the libraries, to the data frame in its features and label columns
 
 
 ```R
@@ -45,7 +45,7 @@ object ChiSquareTestExample {
 ```
 
 # Correlation
-Se declaran las librerias que usaremos en la correlacion
+The libraries that we use in the map are declared
 
 ```R
 import org.apache.spark.ml.linalg.{Matrix, Vectors}
@@ -54,13 +54,13 @@ import org.apache.spark.sql.Row
 import org.apache.spark.sql.SparkSession
 ```
 
-Se crea un valor llamado data al que se le asigna una secuencia de vectores como valor.
+A value called data is created and a sequence of vectors is assigned as a value.
 
-Se crea un dataframe al cual se le asigna el valor de una Tupla llamada Tuple1, el dataframe contiene una columna llamada feautures
+A dataframe is created that is assigned the value of a Tuple called Tuple1, the dataframe contains a column called feautures
 
-A un valor tipo Fila llamado coefficiente1 de una matriz se le asigna el valor de la correlacion de pearson aplicada en el dataframe aplicada a su columna features
+A Row type value called coefficient1 of a matrix is assigned the value of the pearson correlation applied to the dataframe applied to its features column.
 
-Un valor tipo Fila llamado coefficiente2 de una matriz se le asigna el valor de la correlacion de spearman aplicada en el dataframe aplicada a su columna features
+A Row type value called coefficient2 of a matrix is assigned the value of the spearman correlation applied to the dataframe applied to its features column.
 
 ```R
 object CorrelationExample {
@@ -90,30 +90,30 @@ object CorrelationExample {
 ```
 
 # Summarizer
-Se declaran las librerias que usaremos en el ejemplo de Sumarizer
+The libraries that we use in the Sumarizer example are declared
 
 ```R
 import org.apache.spark.ml.linalg.{Vector, Vectors}
 import org.apache.spark.ml.stat.Summarizer
 import org.apache.spark.sql.SparkSession
 ```
-Se importan los metodos de Summarizer
+Summarizer methods are imported
 
-Valor data contendra dos vectores 
+Data value will contain two vectors
 
-Valor df para hacer referencia a "Feactures" y "weight"
+Df value to refer to "Feactures" and "weight"
 
-Dos valores para la media y varianza; se seleccionan las metricas (Mean,Variance)
+Two values for the mean and variance; the metrics are selected (Mean, Variance)
 
-Metodo summary que se lo aplicaremos a  Feactures y Weight y le damos un alias
+Summary method that we will apply to Feactures and Weight and give it an alias
 
-Seleccionamos el Summary con su respectiva metrica
+We select the Summary with its respective metric
 
-Se le da una la forma en la que queremos imprimir imprimir
+It is given a the way we want to print print
 
-Mandamos a la impresion para mostrar los valores de la Mean y Varianza 
+We send to printing to show the values of the Mean and Variance
 
-Segundo Valor sin usar el metodo Summary 
+Second Value without using the Summary method
 
 ```R
 object SummarizerExample {def main(args: Array[String]): Unit = {val spark = SparkSession.builder.appName("SummarizerExample").getOrCreate()

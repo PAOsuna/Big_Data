@@ -7,30 +7,30 @@ import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
 import org.apache.spark.ml.feature.{IndexToString, StringIndexer, VectorIndexer}
 ```
 
-Se Cargan y se analiza el archivo de datos, convirtiéndolo en un DataFrame.
+The data file is loaded and parsed, turning it into a DataFrame.
 
 ```R
-// 
+
 val data = spark.read.format("libsvm").load("sample_libsvm_data.txt")
 ```
-Se crean las etiquetas de índice y agregando los metadatos a la columna de etiquetas.
-El conjunto debe encajar con los datos para incluir todas las etiquetas en el índice.
+You create the index tags and adding the metadata to the tag column.
+The set must match the data to include all the labels in the index.
 
-Se Identifica automáticamente las características categóricas e indexadas.
+Categorical and indexed characteristics are automatically identified.
 
-Establece un maxCategories para que las entidades con > 4 de valores distintos que se traten como continuas.
+Sets a maxCategories so that entities with> 4 distinct values are treated as continuous.
 
-Se Dividen los datos en conjuntos de prueba y entrenamiento (el 30% se reserva para probar).
+The data is divided into test and training sets (30% reserved for testing).
 
-Se convierten las etiquetas indexadas de nuevo a etiquetas originales.
+Indexed tags are converted back to original tags.
 
-Los Indexadores en cadena y GBT se indexan en el Pipeline.
+Chain and GBT Indexers are indexed in the Pipeline.
 
-Se Hacen las predicciones predicciones.
+Predictions predictions are made.
 
-Se seleccionan las filas de ejemplo para mostrarlas.
+The sample rows are selected for display.
 
-Selecciona (predicción, etiqueta verdadera) y calcule el error de prueba.
+Select (prediction, true label) and calculate the test error.
 
 ```r
 val labelIndexer = new StringIndexer().setInputCol("label").setOutputCol("indexedLabel").fit(data)
