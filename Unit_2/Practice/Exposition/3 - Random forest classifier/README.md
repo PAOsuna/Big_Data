@@ -1,6 +1,7 @@
 # Random Forest
 
-Se importan las librerias para usar en el ejemplo
+The libraries are imported to use in the example
+
 ```R
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.ml.classification.{RandomForestClassificationModel, RandomForestClassifier}
@@ -9,25 +10,25 @@ import org.apache.spark.ml.feature.{IndexToString, StringIndexer, VectorIndexer}
 import org.apache.spark.ml.attribute.Attribute
 ```
 
-Se carga y se analiza el archivo de datos para convertirlo en un DataFrame.
+The data file is loaded and parsed into a DataFrame.
 
-Se agregan etiquetas de índice para agregarlos a los metadatos de la columna de etiquetas.
+Index tags are added to add to the tag column metadata.
 
-El conjunto debe encajar con los datos para incluir todas las etiquetas en el índice.
+The set must match the data to include all the labels in the index.
 
-Se identican automáticamente características categóricas e indexadas.
+Categorical and indexed characteristics are automatically identified.
 
-Se establece un maxCategories para que las entidades con > 4 o valores distintos se traten como continuas.
+A maxCategories is set so that entities with> 4 or different values are treated as continuous.
 
-Se Dividen los datos en conjuntos de prueba y entrenamiento (el 30% se reserva para probar).
+The data is divided into test and training sets (30% reserved for testing).
 
-Se convierten las etiquetas indexadas de nuevo a etiquetas originales.
+Indexed tags are converted back to original tags.
 
-Se indexan la cadena y forest en el Pipeline.
+The chain and forest are indexed in the Pipeline.
 
-Se hacen las predicciones.
+Predictions are made.
 
-Al final, se seleccionan las filas de ejemplo para mostrar.
+At the end, the sample rows are selected to display.
 
 ```R
 val data = spark.read.format("libsvm").load("sample_libsvm_data.txt")
