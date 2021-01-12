@@ -28,7 +28,7 @@ A decision tree consists of:
 - Nodes: test the value of a certain attribute.
 - Borders / branch: corresponds to the result of a test and connects to the next node or sheet.
 - Sheet nodes: terminal nodes that predict the result (represent class labels or class distribution).
-
+![Parts-of-a-Decision-Tree](https://i.imgur.com/eUeEGCU.jpg)
 
 
 *To understand the concept of Decision Tree, consider the previous example. Let's say you want to predict whether a person is fit or not, given their information such as age, eating habits, physical activity, etc. Decision nodes are questions like 'What is the age?', 'Do you exercise?', 'Do you eat a lot of pizzas? And the sheets represent results as 'fit' or 'not fit'*
