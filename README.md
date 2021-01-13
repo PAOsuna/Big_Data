@@ -1,9 +1,52 @@
+![tec](https://i.imgur.com/DKIVS3c.png)
+
+<center>
+
+### TECNOLÓGICO NACIONAL DE MÉXICO
+
+### INSTITUTO TECNOLÓGICO DE TIJUANA
+
+### SUBDIRECCIÓN ACADÉMICA
+
+### DEPARTAMENTO DE SISTEMAS Y COMPUTACIÓN
+
+### SEMESTRE
+
+### SEPTIEMBRE 2020 - ENERO 2021
+
+### Datos Masivos
+
+### BDD-1704TI9A
+
+### REPOSITORIO DE LA MATERIA
+
+## EQUIPO:
+
+### SAÑUDO CAMACHO LEONARDO DANIEL 15212166
+
+### OSUNA ENCISO PABLO ALEJANDRO 16210279
+
+## DOCENTE:
+
+### JOSE CHRISTIAN ROMERO HERNANDEZ
+
+### TIJUANA, BAJA CALIFORNIA, MÉXICO
+</center>
+
+## **INDEX**
+
+
+
+
 ## Introduction
 
+<p style="text-align: justify;">
 Today it is surprising how large companies use learning algorithms to make recommendations to their users and to provide a better experience for them.
 But how are these machine learning algorithms performed? In this work we will use different methods that will help us solve some problems, in this way we will be able to understand how some companies or web pages such as netflix or google use the recommendations based on the previous searches of their users. Apache spark will be used in the Scala programming language
 
+
 # Theoretical framework
+
 In general, Machine Learning algorithms can be classified into two types:
 
 - Supervised: these algorithms are trained with a set of data whose result is already known. That is, the model is trained with data from which the input and output are already known.
@@ -14,11 +57,12 @@ Spark MLlib provides both supervised and unsupervised learning algorithms that o
 
 In this document we will be seeing only algorithms for classification using the spark mlib library, the algorithms that we will play in this work will be the following:
 - Decision tree classifier
+- Support Vector Machine
 - Logistic Regression
 - Multilayer Perceptron
-- Support Vector Machine
 
 ## Decision Tree Classifier
+
 
 Decision trees are popular methods for classification and regression tasks of machine learning.
 Decision trees are widely used because they are easy to interpret, handle categorical characteristics, extend to the multi-class classification configuration, do not require scale of characteristics and are capable of capturing nonlinearities and characteristic interactions.
@@ -63,16 +107,36 @@ Los vectores de soporte son puntos de datos que están más cerca del hiperplano
 ## Logistic Regression
 
 La regresión logística es una técnica de aprendizaje automático que proviene del campo de la estadística. A pesar de su nombre no es un algoritmo para aplicar en problemas de regresión, en los que se busca un valor continuo, sino que es un método para problemas de clasificación, en los que se obtienen un valor binario entre 0 y 1.
+![Logistic-Function](https://i.imgur.com/iekVvmk.png)
 
 Con la regresión logística se mide la relación entre la variable dependiente, la afirmación que se desea predecir, con una o más variables independientes, el conjunto de características disponibles para el modelo. Para ello utiliza una función logística que determina la probabilidad de la variable dependiente. Como se ha comentado anteriormente, lo que se busca en estos problemas es una clasificación, por lo que la probabilidad se ha de traducir en valores binarios. Para lo que se utiliza un valor umbral. Los valores de probabilidad por encima del valor umbral la afirmación es cierta y por debajo es falsa. Generalmente este valor es 0,5, aunque se puede aumentar o reducir para gestionar el número de falsos positivos o falsos negativos.
 
+## Multilayer Perceptron
+
+Multi layer perceptron (MLP) is a supplement of feed forward neural network. It consists of three types of layers
+- the input layer
+- output layer 
+- hidden layer. 
+
+The input layer receives the input signal to be processed. The required task such as prediction and classification is performed by the output layer. An arbitrary number of hidden layers that are placed in between the input and output layer are the true computational engine of the MLP. Similar to a feed forward network in a MLP the data flows in the forward direction from input to output layer. The neurons in the MLP are trained with the back propagation learning algorithm. MLPs are designed to approximate any continuous function and can solve problems which are not linearly separable. The major use cases of MLP are pattern classification, recognition, prediction and approximation.
+![1-s2.0-S0065245819300506-f14-03-9780128187562](https://i.imgur.com/vxAkYIm.jpg)![1*eloYEyFrblGHVZhU345PJw](https://i.imgur.com/aSSOitn.jpg)
+
 # Implementacion
 
+For the comparison of these four algorithms we use apache spark, with its extension to work with the scala language. Scala is a modern multi-paradigm programming language designed to express common programming patterns in a concise, elegant, and secure way. Thanks to the implementation of this language we can program an algorithm in a simpler way with a performance that surpasses other languages, because we work through a base with spark.
+
+#### Used Tools
+![Collage sin título](https://i.imgur.com/UjHUsgz.jpg)
+
+
+
 ## Apache Spark
+![9b7e1b03-spark_0](https://i.imgur.com/lG1EAf6.png)
 
 Apache Spark es hoy en día una de las tecnologías más influyente y de importancia en el mundo del Big Data. Es un sistema computacional de clústeres abiertos, motor de análisis unificado, ultrarrápido para Big Data y Machine Learning.
 
 Desde su lanzamiento, Apache Spark , ha sido rápidamente adoptado por empresas en una amplia gama de industrias. Se ha convertido rápidamente en la mayor comunidad de código abierto en big data, con más de 1000 colaboradores de más de 250 organizaciones tecnológicas, lo que hace la programación más accesible para los científicos de datos.
+
 
 ## Beneficios de Apache Spark
 
@@ -125,10 +189,15 @@ Apache Spark se compone de :
 
 1.- Necesita más memoria de almacenamiento.2.Como utiliza aplicaciones pesadas, puede disminuir su rendimiento
 
-Referencias
+##Referencias
 
 Verjaga Felgueras Maria Elena (2018), Analisis de datos y extraccion de conocimientos utilizando Big Data.10 Enero 2021 . de Universidad de Jaén. Sitio web: http://tauja.ujaen.es/bitstream/10953.1/8380/1/MEMORIA.pdf
 
 Sebastian Ilabaca. (06 Febrero, 2018). ¿Qué es Apache Spark?. 10 Enero, 2021, de Analytucs10 Sitio web: https://www.analytics10.com/que-es-apache-spark/
 
 Rohith Gandhi. (07 Junio, 2018). Support Vector Machine — Introduction to Machine Learning Algorithms. 10 Enero, 2021, de Toward Data Science Sitio web: https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47
+
+The Digital Twin Paradigm for Smarter Systems and Environments: The Industry Use Cases
+S. Abirami, P. Chitra, in Advances in Computers, 2020
+https://www.sciencedirect.com/topics/computer-science/multilayer-perceptron
+</p>
