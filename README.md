@@ -47,7 +47,16 @@
         * [Apache Spark Benefits](#Benefits)
         * [Speed](#Speed)
         * [Easy to use](#Easy)
+        * [A unified engine](#engine)
+        * [Advantages and disadvantages](#AAD)
+        * [Advantages](#Advantages)
+        * [Disadvantages](#Disadvantages)
 * [Results](#Results)
+    * [Desicion tree](#Results-DT)
+    * [Logistic Regression](#Results-LR)
+    * [Multilayer Perceptron](#Results-MP)
+    * [Support Vector Machine](#Results-SVM)
+* [References](#References)
 
 <div id='introducction'/>
 
@@ -182,8 +191,9 @@ Spark can be 100 times faster than Hadoop for large-scale data processing by exp
 
 Spark has easy-to-use APIs for operating on large data sets. This includes a collection of more than 100 operators for transforming data and familiar data frame APIs for manipulating semi-structured data. APIs such as Java, Scala, Python and R. It is also known for its ease of use when creating algorithms that acquire all the knowledge of very complex data.
 
-### A unified engine
+<div id='engine'/>
 
+### A unified engine
 
 Spark comes bundled with top-level libraries, including support for SQL queries, streaming data, machine learning, and graphics processing. These standard libraries increase developer productivity and can be seamlessly combined to create complex workflows.
 
@@ -199,7 +209,11 @@ Apache Spark consists of:
 
 * Spark Graph: Allows graph processing (DAG). It does not allow you to paint graphs, but rather allows you to create operations with graphs, with their nodes and edges, and carry out operations.
 
+<div id='AAD'/>
+
 ## Advantages and disadvantages
+
+<div id='Advantages'/>
 
 ### Advantages 
 1.- Sparkes more powerful than hadoop: it allows us to develop large Big Data projects with less investment and achieving good results.
@@ -220,12 +234,19 @@ Apache Spark consists of:
 
 9.- Leads Big Data technologies: companies such as IBM, Huawei and Microsoft, among others, invest and integrate Spark in their work.
 
+<div id='Disadvantages'/>
+
 ### Disadvantages
 
 1.- You need more storage memory.
+
 2.- As it uses heavy applications, it can decrease its performance
 
+<div id='Results'/>
+
 ## Results
+
+<div id='Results-DT'/>
 
 #### Desicion tree
 ```r
@@ -244,6 +265,8 @@ scala> val accuracy = evaluator.evaluate(predictions)
 accuracy: Double = 0.8903792286145227
 ```
 
+<div id='Results-LR'/>
+
 #### Logistic Regression
 ```r
 test.1
@@ -258,6 +281,8 @@ test.3
 scala> println(s"Accuraccy = ${evaluator.evaluate(result)}")
 Accuraccy = 0.8836548445270234
 ```
+
+<div id='Results-MP'/>
 
 #### Multilayer Perceptron
 ```r
@@ -274,11 +299,16 @@ scala> println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}"
 Test set accuracy = 0.8862768145753747 
 ```
 
+<div id='Results-SVM'/>
+
 #### Support Vector Machine
 ```r
 println(s"Coefficients: ${linsvcModel.coefficients} Intercept: ${linsvcModel.intercept}")
 Coefficients: [2.125897501491213E-6,0.013517727458849872,-7.514021888017163E-4,-2.7022337506408964E-4,-0.011177544540215354] Intercept: 1.084924165339881
 ```
+
+<div id='References'/>
+
 ## References
 
 Verjaga Felgueras Maria Elena (2018), Analisis de datos y extraccion de conocimientos utilizando Big Data.10 Enero 2021 . de Universidad de Jaén. Sitio web: http://tauja.ujaen.es/bitstream/10953.1/8380/1/MEMORIA.pdf
