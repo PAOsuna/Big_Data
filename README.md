@@ -35,15 +35,29 @@
 
 ## **INDEX**
 
+* [Introducction](#introduction)
+    * [Theoretical Framework](#Theoretical)
+    * [Decision Tree Classifier](Decision-tree)
+    * [Support Vector Machines](#SVM)
+        * [Hyperplanes and support vectors](#Hyperplanes)
+    * [Logistic Regression](#LR)
+    * [Multilayer Perceptron](#MP)
+* [Implementation](#Implementation)
+    * [Apache Spark](#Spark)
+        * [Apache Spark Benefits](#Benefits)
+        * [Speed](#Speed)
+        * [Easy to use](#Easy)
 
 
+<div id='introducction'/>
 
-## Introduction
+## Introduction 
 
 <p style="text-align: justify;">
 Today it is surprising how large companies use learning algorithms to make recommendations to their users and to provide a better experience for them.
 But how are these machine learning algorithms performed? In this work we will use different methods that will help us solve some problems, in this way we will be able to understand how some companies or web pages such as netflix or google use the recommendations based on the previous searches of their users. Apache spark will be used in the Scala programming language
 
+<div id='Theoretical'/>
 
 # Theoretical framework
 
@@ -60,6 +74,8 @@ In this document we will be seeing only algorithms for classification using the 
 - Support Vector Machine
 - Logistic Regression
 - Multilayer Perceptron
+
+<div id='Decision-tree'/>
 
 ## Decision Tree Classifier
 
@@ -85,31 +101,40 @@ Such a tree is constructed through a process known as binary recursive partition
 - Regression trees.
 Decision trees where the objective variable can take continuous values ​​(typically real numbers) are called regression trees. (for example, the price of a house or the length of a patient's stay in a hospital)
 
+<div id='SVM'/>
+
 ## Support Vector Machines (SVM)
-El objetivo del algoritmo de máquina vectorial de soporte es encontrar un hiperplano en un espacio N-dimensional (N — el número de entidades) que clasifique claramente los puntos de datos.
+The goal of the support vector machine algorithm is to find a hyperplane in an N-dimensional space (N - the number of entities) that clearly classifies the data points.
 
 ![0*9jEWNXTAao7phK-5](https://i.imgur.com/gpHLiqp.png)
 
 ![0*0o8xIA4k3gXUDCFU](https://i.imgur.com/mBg6J4r.png)
 
-Para separar las dos clases de puntos de datos, hay muchos hiperplanos posibles que se podrían elegir. Nuestro objetivo es encontrar un plano que tenga el margen máximo, es decir, la distancia máxima entre los puntos de datos de ambas clases. Maximizar la distancia de margen proporciona algún refuerzo para que los puntos de datos futuros se puedan clasificar con más confianza.
+To separate the two classes of data points, there are many possible hyperplanes that could be chosen. Our goal is to find a plane that has the maximum margin, that is, the maximum distance between the data points of both classes. Maximizing the margin distance provides some reinforcement so that future data points can be classified with more confidence.
 
-### Hiperplanos y vectores de soporte
+<div id='Hyperplanes'/>
+
+### Hyperplanes and support vectors
 
 ![1*ZpkLQf2FNfzfH4HXeMw4MQ](https://i.imgur.com/Qig1qbo.png)
 
-Los hiperplanos son límites de decisión que ayudan a clasificar los puntos de datos. Los puntos de datos que caen a ambos lados del hiperplano se pueden atribuir a diferentes clases. Además, la dimensión del hiperplano depende del número de entidades. Si el número de entidades de entrada es 2, el hiperplano es solo una línea. Si el número de entidades de entrada es 3, el hiperplano se convierte en un plano bidimensional. Se hace difícil imaginar cuando el número de entidades supera 3.
+Hyperplanes are decision boundaries that help classify data points. The data points that fall on both sides of the hyperplane can be attributed to different classes. Also, the dimension of the hyperplane depends on the number of entities. If the number of input features is 2, the hyperplane is just one line. If the number of input features is 3, the hyperplane becomes a two-dimensional plane. It becomes difficult to imagine when the number of entities exceeds 3.
 
 ![0*ecA4Ls8kBYSM5nza](https://i.imgur.com/hC3jOke.jpg)
 
-Los vectores de soporte son puntos de datos que están más cerca del hiperplano e influyen en la posición y orientación del hiperplano. Usando estos vectores de soporte, maximizamos el margen del clasificador. La eliminación de los vectores de soporte cambiará la posición del hiperplano. Estos son los puntos que nos ayudan a construir nuestra SVM.
+Support vectors are data points that are closer to the hyperplane and influence the position and orientation of the hyperplane. Using these support vectors, we maximize the margin of the classifier. Removing the support vectors will change the position of the hyperplane. These are the points that help us build our SVM.
+
+<div id='LR'/>
 
 ## Logistic Regression
 
-La regresión logística es una técnica de aprendizaje automático que proviene del campo de la estadística. A pesar de su nombre no es un algoritmo para aplicar en problemas de regresión, en los que se busca un valor continuo, sino que es un método para problemas de clasificación, en los que se obtienen un valor binario entre 0 y 1.
+Logistic regression is a machine learning technique that comes from the field of statistics. Despite its name, it is not an algorithm to apply in regression problems, in which a continuous value is sought, but it is a method for classification problems, in which a binary value between 0 and 1 is obtained.
+
 ![Logistic-Function](https://i.imgur.com/iekVvmk.png)
 
-Con la regresión logística se mide la relación entre la variable dependiente, la afirmación que se desea predecir, con una o más variables independientes, el conjunto de características disponibles para el modelo. Para ello utiliza una función logística que determina la probabilidad de la variable dependiente. Como se ha comentado anteriormente, lo que se busca en estos problemas es una clasificación, por lo que la probabilidad se ha de traducir en valores binarios. Para lo que se utiliza un valor umbral. Los valores de probabilidad por encima del valor umbral la afirmación es cierta y por debajo es falsa. Generalmente este valor es 0,5, aunque se puede aumentar o reducir para gestionar el número de falsos positivos o falsos negativos.
+With logistic regression, the relationship between the dependent variable, the statement to be predicted, with one or more independent variables, the set of characteristics available for the model, is measured. To do this, it uses a logistic function that determines the probability of the dependent variable. As previously mentioned, what is sought in these problems is a classification, so the probability has to be translated into binary values. What a threshold value is used for. For probability values ​​above the threshold value the statement is true and below it is false. Generally this value is 0.5, although it can be increased or decreased to manage the number of false positives or false negatives.
+
+<div id='MP'/>
 
 ## Multilayer Perceptron
 
@@ -121,75 +146,86 @@ Multi layer perceptron (MLP) is a supplement of feed forward neural network. It 
 The input layer receives the input signal to be processed. The required task such as prediction and classification is performed by the output layer. An arbitrary number of hidden layers that are placed in between the input and output layer are the true computational engine of the MLP. Similar to a feed forward network in a MLP the data flows in the forward direction from input to output layer. The neurons in the MLP are trained with the back propagation learning algorithm. MLPs are designed to approximate any continuous function and can solve problems which are not linearly separable. The major use cases of MLP are pattern classification, recognition, prediction and approximation.
 ![1-s2.0-S0065245819300506-f14-03-9780128187562](https://i.imgur.com/vxAkYIm.jpg)![1*eloYEyFrblGHVZhU345PJw](https://i.imgur.com/aSSOitn.jpg)
 
-# Implementacion
+<div id='Implementation'/>
+
+# Implementation
 
 For the comparison of these four algorithms we use apache spark, with its extension to work with the scala language. Scala is a modern multi-paradigm programming language designed to express common programming patterns in a concise, elegant, and secure way. Thanks to the implementation of this language we can program an algorithm in a simpler way with a performance that surpasses other languages, because we work through a base with spark.
+
+<div id='Tools'/>
 
 #### Used Tools
 ![Collage sin título](https://i.imgur.com/UjHUsgz.jpg)
 
-
+<div id='Spark'/>
 
 ## Apache Spark
 ![9b7e1b03-spark_0](https://i.imgur.com/lG1EAf6.png)
 
-Apache Spark es hoy en día una de las tecnologías más influyente y de importancia en el mundo del Big Data. Es un sistema computacional de clústeres abiertos, motor de análisis unificado, ultrarrápido para Big Data y Machine Learning.
+Apache Spark is today one of the most influential and important technologies in the world of Big Data. It is an open cluster computational system, unified, ultra-fast analysis engine for Big Data and Machine Learning.
 
-Desde su lanzamiento, Apache Spark , ha sido rápidamente adoptado por empresas en una amplia gama de industrias. Se ha convertido rápidamente en la mayor comunidad de código abierto en big data, con más de 1000 colaboradores de más de 250 organizaciones tecnológicas, lo que hace la programación más accesible para los científicos de datos.
+Since its launch, Apache Spark has been rapidly adopted by companies in a wide range of industries. It has quickly become the largest open source community in big data, with more than 1,000 contributors from more than 250 technology organizations, making programming more accessible to data scientists.
+
+<div id='Benefits'/>
+
+## Apache Spark Benefits
+
+<div id='Speed'/>
+
+### Speed
+
+Spark can be 100 times faster than Hadoop for large-scale data processing by exploiting in-memory computing and other optimizations. It is also fast when data is stored to disk, and currently holds the world record for large-scale disk sorting.
+
+<div id='Easy'/>
+
+### Easy to use
+
+Spark has easy-to-use APIs for operating on large data sets. This includes a collection of more than 100 operators for transforming data and familiar data frame APIs for manipulating semi-structured data. APIs such as Java, Scala, Python and R. It is also known for its ease of use when creating algorithms that acquire all the knowledge of very complex data.
+
+### A unified engine
 
 
-## Beneficios de Apache Spark
+Spark comes bundled with top-level libraries, including support for SQL queries, streaming data, machine learning, and graphics processing. These standard libraries increase developer productivity and can be seamlessly combined to create complex workflows.
 
-### Velocidad
+Apache Spark consists of:
 
-Spark puede ser 100 veces más rápido que Hadoop para el procesamiento de datos a gran escala al explotar la computación en memoria y otras optimizaciones. También es rápido cuando los datos se almacenan en el disco, y actualmente tiene el récord mundial para la clasificación en disco a gran escala.
+* Spark SQL: Structured and semi-structured data processing module. With this, it will be possible to transform and perform operations on RDDs or dataframes. Special for the treatment of data.
 
-### Facilidad de uso
+* Spark Core: Core of the framework. It is the base of libraries where the rest of the modules are supported.
 
-Spark tiene API fáciles de usar para operar en grandes conjuntos de datos. Esto incluye una colección de más de 100 operadores para transformar datos y APIs de marcos de datos familiares para manipular datos semiestructurados. APIs como Java, Scala, Phyton y R. También es conocido por su facilidad de uso a la hora de crear algoritmos que adquieren todo el conocimiento de datos muy complejos.
+* Spark MLLib: It is a very complete library that contains numerous Machine Learning algorithms, both for clustering, classification, regression, etc. It allows us, in a friendly way, to be able to use Machine Learning algorithms.
 
-### Un motor unificado
+* Spark Streaming: It is the one that allows the ingestion of data in real time. If we have a source, for example Kafka or Twitter, with this module we can ingest the data from that source and dump it to a destination. Between the data ingestion and its subsequent dump, we can have a series of transformations.
 
-Spark viene empaquetado con bibliotecas de nivel superior, que incluyen soporte para consultas SQL, transmisión de datos, aprendizaje automático y procesamiento de gráficos. Estas bibliotecas estándar aumentan la productividad del desarrollador y se pueden combinar sin problemas para crear flujos de trabajo complejos.
+* Spark Graph: Allows graph processing (DAG). It does not allow you to paint graphs, but rather allows you to create operations with graphs, with their nodes and edges, and carry out operations.
 
-Apache Spark se compone de :
+## Advantages and disadvantages
 
-* Spark SQL: Módulo de procesamiento de datos estructurados y semi-estructurados. Con esto se podrá transformar y realizar operaciones sobre los RDD o los dataframes. Especial para el tratamiento de los datos.
+### Advantages 
+1.- Sparkes more powerful than hadoop: it allows us to develop large Big Data projects with less investment and achieving good results.
 
-* Spark Core: Núcleo del framework. Es la base de librerías donde se apoya el resto de los módulos.
+2.- It is a code platform.
 
-* Spark MLLib: Es una librería muy completa que contiene numerosos algoritmos de Machine Learning, tanto de clusterización, clasificación, regresión, etc. Nos permite, de una forma amigable, poder utilizar algoritmos de Machine Learning.
+3.- It's fast: Much more than Hadoop. It guarantees good productivity and greater interactivity.
 
-* Spark Streaming: Es el que permite la ingesta de datos en tiempo real. Si tenemos una fuente, por ejemplo Kafka o Twitter, con este módulo podemos ingestar los datos de esa fuente y volcarlos a un destino. Entre la ingesta de datos y su volcado posterior, podemos tener una serie de transformaciones.
+4.- It can interpenetrate with another Big Data architecture: It can use HDFS files or YARN processes among others.
 
-* Spark Graph: Permite el procesamiento de grafos (DAG). No permite pintar grafos, sino que permite crear operaciones con grafos, con sus nodos y aristas, e ir realizando operaciones.
+5.- Take care of developers: when a person is using this technology, they should only have in mind to develop the code or algorithm that they are implementing since with the programming languages ​​it offers and the easy working environment there is no other concern.
 
-## Ventajas y Desventajas
+6.- It is made up of APIs for various languages ​​and jobs.
 
-### VENTAJAS 
-1.- Sparkes más potenteque hadoop: nos permite desarrollar grandes proyectos Big Datacon menos inversión y consiguiendo buenos resultados.
+7.- It has an interactive console to be able to work more easily
 
-2.- Es una plataforma de código.
+8.- Great ally of Kappa Architecture that is made up of Kafka + Spark + NOSql + Scala. It is one of the architectures that are most in demand.
 
-3.- Es  rápido: Mucho  más  que  Hadoop.  Garantiza  una  buena  productividad  y  mayor interactividad.
+9.- Leads Big Data technologies: companies such as IBM, Huawei and Microsoft, among others, invest and integrate Spark in their work.
 
-4.- Puede  compenetrarse  con  otra  arquitectura Big  Data: Puede  utilizar  ficheros  de HDFS o procesos de YARN entre otras.
+### Disadvantages
 
-5.- Cuida  a  los  desarrolladores:  cuando una  persona  está  utilizando  esta  tecnología únicamente  debe  de  tener  en  mente  desarrollar  el  código  u  algoritmo  que  esté implementando  ya  que con  los  lenguajes  de  programación  que  ofrece  y  el  fácil entorno de trabajo no existe otra preocupación.
+1.- You need more storage memory.
+2.- As it uses heavy applications, it can decrease its performance
 
-6.- La componen APIs para varios lenguajes y trabajos.
-
-7.- Tiene una consola interactiva para poder trabajar con mayor facilidad
-
-8.- Gran aliado de la Arquitectura Kappa que la conforman Kafka + Spark + NOSql + Scala. Es una de las arquitecturas que más se demandan.
-
-9.- Encabeza  tecnologías Big  Data: compañías  como IBM,  Huawei  y  Microsoft  entre otras invierten e integran a Spark en sustrabajos.
-
-### DESVENTAJAS
-
-1.- Necesita más memoria de almacenamiento.2.Como utiliza aplicaciones pesadas, puede disminuir su rendimiento
-
-##Referencias
+## References
 
 Verjaga Felgueras Maria Elena (2018), Analisis de datos y extraccion de conocimientos utilizando Big Data.10 Enero 2021 . de Universidad de Jaén. Sitio web: http://tauja.ujaen.es/bitstream/10953.1/8380/1/MEMORIA.pdf
 
