@@ -110,6 +110,20 @@ Such a tree is constructed through a process known as binary recursive partition
 - Regression trees.
 Decision trees where the objective variable can take continuous values ​​(typically real numbers) are called regression trees. (for example, the price of a house or the length of a patient's stay in a hospital)
 
+##### Code
+
+```r
+val dt = new DecisionTreeClassifier().setLabelCol("indexedLabel").setFeaturesCol("indexedFeatures")
+val labelConverter = new IndexToString().setInputCol("prediction").setOutputCol("predictedLabel").setLabels(labelIndexer.labels)
+val pipeline = new Pipeline().setStages(Array(labelIndexer, featureIndexer, dt, labelConverter))
+val model = pipeline.fit(trainingData)
+val predictions = model.transform(testData)
+predictions.select("predictedLabel", "y", "features").show(5)
+val evaluator = new MulticlassClassificationEvaluator().setLabelCol("indexedLabel").setPredictionCol("prediction").setMetricName("accuracy")
+val accuracy = evaluator.evaluate(predictions)
+println(s"Test Error = ${(1.0 - accuracy)}")
+```
+
 <div id='SVM'/>
 
 ## Support Vector Machines (SVM)
@@ -133,6 +147,18 @@ Hyperplanes are decision boundaries that help classify data points. The data poi
 
 Support vectors are data points that are closer to the hyperplane and influence the position and orientation of the hyperplane. Using these support vectors, we maximize the margin of the classifier. Removing the support vectors will change the position of the hyperplane. These are the points that help us build our SVM.
 
+##### code
+```r
+val c1 = feat.withColumn("label",when(col("label").equalTo("1"),0).otherwise(col("label")))
+val c2 = c1.withColumn("label",when(col("label").equalTo("2"),1).otherwise(col("label")))
+val c3 = c2.withColumn("label",'label.cast("Int"))
+val linsvc = new LinearSVC().setMaxIter(10).setRegParam(0.1)
+
+val linsvcModel = linsvc.fit(c3)
+
+
+println(s"Coefficients: ${linsvcModel.coefficients} Intercept: ${linsvcModel.intercept}")
+```
 <div id='LR'/>
 
 ## Logistic Regression
@@ -142,7 +168,17 @@ Logistic regression is a machine learning technique that comes from the field of
 ![Logistic-Function](https://i.imgur.com/iekVvmk.png)
 
 With logistic regression, the relationship between the dependent variable, the statement to be predicted, with one or more independent variables, the set of characteristics available for the model, is measured. To do this, it uses a logistic function that determines the probability of the dependent variable. As previously mentioned, what is sought in these problems is a classification, so the probability has to be translated into binary values. What a threshold value is used for. For probability values ​​above the threshold value the statement is true and below it is false. Generally this value is 0.5, although it can be increased or decreased to manage the number of false positives or false negatives.
+##### code
+```r
+val lr = new  LogisticRegression().setMaxIter(10).setRegParam(0.1)
+val model = lr.fit(train)
+val result = model.transform(test)
+val evaluator = new MulticlassClassificationEvaluator().setMetricName("accuracy")
 
+println(s"Coefficients: ${model.coefficients}")
+println(s"Intecept: ${model.intercept}")
+println(s"Accuraccy = ${evaluator.evaluate(result)}")
+```
 <div id='MP'/>
 
 ## Multilayer Perceptron
@@ -155,6 +191,17 @@ Multi layer perceptron (MLP) is a supplement of feed forward neural network. It 
 The input layer receives the input signal to be processed. The required task such as prediction and classification is performed by the output layer. An arbitrary number of hidden layers that are placed in between the input and output layer are the true computational engine of the MLP. Similar to a feed forward network in a MLP the data flows in the forward direction from input to output layer. The neurons in the MLP are trained with the back propagation learning algorithm. MLPs are designed to approximate any continuous function and can solve problems which are not linearly separable. The major use cases of MLP are pattern classification, recognition, prediction and approximation.
 ![1-s2.0-S0065245819300506-f14-03-9780128187562](https://i.imgur.com/vxAkYIm.jpg)![1*eloYEyFrblGHVZhU345PJw](https://i.imgur.com/aSSOitn.jpg)
 
+##### code
+```r
+val trainer = new MultilayerPerceptronClassifier().setLayers(layers).setBlockSize(128).setSeed(1234L).setMaxIter(100)
+
+val model = trainer.fit(train)
+
+val result = model.transform(test)
+val predictionAndLabels = result.select("prediction", "label")
+val evaluator = new MulticlassClassificationEvaluator().setMetricName("accuracy")
+println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")
+```
 <div id='Implementation'/>
 
 # Implementation
