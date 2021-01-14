@@ -47,7 +47,7 @@
         * [Apache Spark Benefits](#Benefits)
         * [Speed](#Speed)
         * [Easy to use](#Easy)
-
+* [Results](#Results)
 
 <div id='introducction'/>
 
@@ -225,6 +225,60 @@ Apache Spark consists of:
 1.- You need more storage memory.
 2.- As it uses heavy applications, it can decrease its performance
 
+## Results
+
+#### Desicion tree
+```r
+test.1 
+
+scala> val accuracy = evaluator.evaluate(predictions)
+accuracy: Double = 0.890821613619541
+
+test.2
+
+scala> val accuracy = evaluator.evaluate(predictions)
+accuracy: Double = 0.8916602145780333
+
+test.3
+scala> val accuracy = evaluator.evaluate(predictions)
+accuracy: Double = 0.8903792286145227
+```
+
+#### Logistic Regression
+```r
+test.1
+scala> println(s"Accuraccy = ${evaluator.evaluate(result)}")
+Accuraccy = 0.8852697397120838
+
+test.2
+scala> println(s"Accuraccy = ${evaluator.evaluate(result)}")
+Accuraccy = 0.8851245427625849
+
+test.3
+scala> println(s"Accuraccy = ${evaluator.evaluate(result)}")
+Accuraccy = 0.8836548445270234
+```
+
+#### Multilayer Perceptron
+```r
+test.1
+scala> println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")
+Test set accuracy = 0.8848956335944776  
+
+test.2
+scala> println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")
+Test set accuracy = 0.8854597917450759
+
+test.3
+scala> println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")
+Test set accuracy = 0.8862768145753747 
+```
+
+#### Support Vector Machine
+```r
+println(s"Coefficients: ${linsvcModel.coefficients} Intercept: ${linsvcModel.intercept}")
+Coefficients: [2.125897501491213E-6,0.013517727458849872,-7.514021888017163E-4,-2.7022337506408964E-4,-0.011177544540215354] Intercept: 1.084924165339881
+```
 ## References
 
 Verjaga Felgueras Maria Elena (2018), Analisis de datos y extraccion de conocimientos utilizando Big Data.10 Enero 2021 . de Universidad de Jaén. Sitio web: http://tauja.ujaen.es/bitstream/10953.1/8380/1/MEMORIA.pdf

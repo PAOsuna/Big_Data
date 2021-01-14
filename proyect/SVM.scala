@@ -53,4 +53,4 @@ val linsvcModel = linsvc.fit(c3)
 
 /*Imprimimos linea de intercepcion*/
 println(s"Coefficients: ${linsvcModel.coefficients} Intercept: ${linsvcModel.intercept}")
-println(s"Accuracy: $accuracy")
+
